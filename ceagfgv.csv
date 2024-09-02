@@ -1,0 +1,51 @@
+ident,salario,ingles,anosformado,estcivil,filhos,bebida
+1,3500,fluente,12,casado,1,outra alcoolica
+2,1800,nenhum,2,casado,3,nao alcoolica
+3,4000,fluente,5,casado,1,outra alcoolica
+4,4000,fluente,7,casado,3,outra alcoolica
+5,2500,nenhum,11,casado,2,nao alcoolica
+6,2000,fluente,1,solteiro,0,nao alcoolica
+7,4100,fluente,4,solteiro,0,nao alcoolica
+8,4250,algum,10,casado,2,cerveja
+9,2000,algum,1,solteiro,2,cerveja
+10,2400,algum,1,solteiro,0,nao alcoolica
+11,7000,algum,15,casado,1,nao alcoolica
+12,2500,algum,1,outros,2,nao alcoolica
+13,2800,fluente,2,solteiro,1,nao alcoolica
+14,1800,algum,1,solteiro,0,nao alcoolica
+15,3700,algum,10,casado,4,cerveja
+16,1600,fluente,1,solteiro,2,cerveja
+17,2000,fluente,3,solteiro,0,cerveja
+18,1900,algum,2,solteiro,0,nao alcoolica
+19,1300,algum,1,solteiro,0,nao alcoolica
+20,2300,fluente,3,solteiro,0,cerveja
+21,1500,algum,1,solteiro,0,cerveja
+22,6000,fluente,9,solteiro,0,outra alcoolica
+23,3200,algum,7,solteiro,0,outra alcoolica
+24,2700,fluente,4,solteiro,0,nao alcoolica
+25,4500,fluente,3,solteiro,1,outra alcoolica
+26,1000,algum,0,solteiro,1,outra alcoolica
+27,2000,algum,5,solteiro,0,outra alcoolica
+28,1900,fluente,2,solteiro,0,outra alcoolica
+29,2600,algum,1,solteiro,0,nao alcoolica
+30,3200,,6,casado,3,cerveja
+31,1800,algum,1,solteiro,2,outra alcoolica
+32,3500,,7,solteiro,1,cerveja
+33,1600,algum,1,solteiro,0,nao alcoolica
+34,1700,algum,4,solteiro,0,nao alcoolica
+35,2000,fluente,1,solteiro,2,nao alcoolica
+36,3200,algum,3,solteiro,2,outra alcoolica
+37,2500,fluente,2,solteiro,2,outra alcoolica
+38,7000,fluente,10,solteiro,1,nao alcoolica
+39,2500,algum,5,solteiro,1,nao alcoolica
+40,2200,algum,0,casado,0,cerveja
+41,1500,algum,0,solteiro,0,nao alcoolica
+42,800,algum,1,solteiro,0,nao alcoolica
+43,2000,fluente,0,solteiro,0,nao alcoolica
+44,1650,fluente,1,solteiro,0,nao alcoolica
+45,0,algum,1,solteiro,0,outra alcoolica
+46,3000,algum,7,solteiro,0,cerveja
+47,2950,fluente,5.5,outros,1,outra alcoolica
+48,1200,algum,1,solteiro,0,nao alcoolica
+49,6000,algum,9,casado,2,outra alcoolica
+50,4000,fluente,11,casado,3,outra alcoolica
