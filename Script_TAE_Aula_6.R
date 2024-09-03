@@ -1,13 +1,14 @@
-view(ceagfgv)
-
-#Medidas de resumo e de variabilidade
-var(ceagfgv$salario)
+#Medidas de resumo
 summary(ceagfgv$salario)
+summary(ceagfgv$anosformado)
+
+
+#Medidas de variabilidade
+var(ceagfgv$salario)
 sd(ceagfgv$salario)
 Amplitude <- (3425-1800)
 print(Amplitude)
 
-summary(ceagfgv$anosformado)
 var(ceagfgv$anosformado)
 sd(ceagfgv$anosformado)
 

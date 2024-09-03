@@ -22,9 +22,12 @@ grafico_barras <- barplot(tabela_ingles, main = "Fluencia", ylab = "frequencia")
 tabela_salario <- hist(ceagfgv$salario, main = "Salarios", xlab = "reais", ylab = "frequencia")
 
 #obter as medidas de posição da variavel quantitativa
-summary(ceagfgv$salario)
+Salarios <- summary(ceagfgv$salario)
+Anos_formado <- summary(ceagfgv$anosformado)
+Numero_de_filhos <- summary(ceagfgv$filhos)
+Tabela_quantitativas <- cbind(Salarios, Anos_formado, Numero_de_filhos)
+print(Tabela_quantitativas)
 
-
-#obter o boxplot da variavel quantitativa
-boxplot(ceagfgv$salario, main = "Salarios", ylab = "reais")
-
+#obter o boxplot das variaveis quantitativas
+boxplot(Salarios, main = "Salarios", ylab = "reais")
+boxplot(Anos_formado, Numero_de_filhos)
