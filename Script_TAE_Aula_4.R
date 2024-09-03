@@ -16,12 +16,14 @@ tabela_contingencia <- table(ceagfgv$estcivil, ceagfgv$bebida)
 print(tabela_contingencia)
 
 #construção do gráfico de barras das variáveis categóricas
-grafico_barras <- barplot(tabela_ingles, main = "Fluencia", ylab = "frequencia")
+grafico_barras <- barplot(tabela_ingles, main = "Fluencia", ylab = "frequencia", horiz = FALSE)
+grafico_colunas <- barplot(tabela_ingles, main = "Fluencia", ylab = "frequencia", horiz = TRUE)
 
 #construir o histograma das variáveis quantitativas
 tabela_salario <- hist(ceagfgv$salario, main = "Salarios", xlab = "reais", ylab = "frequencia")
+grafico_barras <- barplot(ceagfgv$anosformado, main = "Anos formado", ylab = "frequencia", horiz = FALSE)
 
-#obter as medidas de posição da variavel quantitativa
+#obter as medidas de posição das variaveis quantitativas
 Salarios <- summary(ceagfgv$salario)
 Anos_formado <- summary(ceagfgv$anosformado)
 Numero_de_filhos <- summary(ceagfgv$filhos)
