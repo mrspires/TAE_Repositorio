@@ -1,9 +1,10 @@
-#Medidas de resumo
+#Medidas de posição
 summary(ceagfgv$salario)
 summary(ceagfgv$anosformado)
+mediana_salario <- median(ceagfgv$salario)
+print(mediana_salario)
 
-
-#Medidas de variabilidade
+#Medidas de dispersão (variabilidade)
 var(ceagfgv$salario)
 sd(ceagfgv$salario)
 Amplitude <- (3425-1800)
@@ -21,3 +22,6 @@ coeficiente_assimetria <- skewness(ceagfgv$salario)
 print(coeficiente_assimetria)
 coeficiente_curtose <- kurtosis(ceagfgv$salario)
 print(coeficiente_curtose)
+
+# histograma
+hist(ceagfgv$salario)
