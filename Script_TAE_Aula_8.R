@@ -20,7 +20,17 @@ with(milsa, tapply(Salario, Inst, median))
 with(milsa, tapply(Salario, Inst, sd)) 
 with(milsa, tapply(Salario, Inst, min))     
 with(milsa, tapply(Salario, Inst, quantile))
-with(milsa, tapply(Salario, Inst, max))     
+with(milsa, tapply(Salario, Inst, max))  
+
+# Ajustar o modelo de ANOVA para o cálculo do coeficiente de determinação
+modelo_anova <- aov(Salario ~ Inst)
+
+anova_sum <- summary(modelo_anova)
+ss_total <- sum(anova_sum[[1]][, "Sum Sq"])
+ss_modelo <- anova_sum[[1]]["categoria", "Sum Sq"]
+r_squared <- ss_modelo / ss_total
+r_squared
+
 
 #FUNÇÕES PARA O ESTUDO DE DUAS VARIÁVEIS QUANTITATIVAS 
 #Classes para variável Anos de acordo com os quartis
