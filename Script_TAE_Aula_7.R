@@ -23,11 +23,11 @@ with(milsa, tapply(Salario, Inst, quantile))
 with(milsa, tapply(Salario, Inst, max))  
 
 # Ajustar o modelo de ANOVA para o cálculo do coeficiente de determinação
-modelo_anova <- aov(Salario ~ Inst)
+modelo_anova <- aov(Salario ~ Inst, data = milsa)
 
 anova_sum <- summary(modelo_anova)
 ss_total <- sum(anova_sum[[1]][, "Sum Sq"])
-ss_modelo <- anova_sum[[1]]["categoria", "Sum Sq"]
+ss_modelo <- anova_sum[[1]]["Inst", "Sum Sq"]
 r_squared <- ss_modelo / ss_total
 r_squared
 
@@ -51,3 +51,9 @@ plot(Salario ~Anos, data=milsa, main= "Gráfico de Dispersão")
 #Coeficiente de correlação das variáveis quantitativas
 with(milsa, cor(Anos, Salario, method = "pearson"))
 with(milsa, cor(Salario, Anos, method = "pearson"))
+
+with(milsa, cor(Anos, Salario, method = "spearman"))
+with(milsa, cor(Salario, Anos, method = "spearman"))
+
+with(milsa, cor(Anos, Salario, method = "kendal"))
+with(milsa, cor(Salario, Anos, method = "kendal"))
