@@ -17,7 +17,7 @@ library(corrplot)
 library(ggcorrplot)
 
 # Visualizar a matriz de correlação de três ou mais variáveis quantitativas
-matriz_correlacao <- aggregate(Salario ~ Anos + Filhos, data = milsa)
+matriz_correlacao <- data.frame(milsa$Salario, milsa$Anos, milsa$Filhos)
 corrplot(matriz_correlacao, method = "circle")
 
 # Visualizar a matriz de correlação com ggcorrplot
