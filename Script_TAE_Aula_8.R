@@ -16,6 +16,13 @@ install.packages("ggcorrplot")
 library(corrplot)
 library(ggcorrplot)
 
+#Para calcular a média de uma variável que contém dados faltantes (ou ocultos como NA) em R,é necessário ignorar esses valores NA durante o cálculo. 
+#Isso pode ser feito utilizando o parâmetro na.rm = TRUE na função mean().
+valor_substituto <- mean(milsa$Filhos, na.rm = TRUE)
+
+#A função replace() é uma maneira simples de substituir valores NA
+data$variavel <- replace(milsa$Filhos, is.na(data$variavel), valor_substituto)
+
 # Visualizar a matriz de correlação de três ou mais variáveis quantitativas
 matriz_correlacao <- data.frame(milsa$Salario, milsa$Anos, milsa$Filhos)
 corrplot(matriz_correlacao, method = "circle")
