@@ -18,9 +18,8 @@ resumos <- summary(modelo_multiplo)
 print(resumos)
 
 #apresenta o gráfico dos resíduos do modelo ajustado
-residuos <- resumo$residuals
-plot(residuos)
+residuos_simples <- resumo$residuals
+plot(residuos_simples)
 
-
-
-
+residuos_multiplo <- resumos$residuals
+plot(residuaos_multiplos)
