@@ -47,11 +47,11 @@ library(FactoMineR)
 install.packages("factoextra")
 library(factoextra)
 
-# Realizar a MCA 
+#Para realizar a MCA é necessário construir um data.frame com as varáveis qualitativas que serão estudadas 
 mca_variaveis <- data.frame(milsa$Regiao, milsa$Est.civil , milsa$Inst)
 resultado_mca <- MCA(mca_variaveis, graph = FALSE)
 
-# Visualizar as variáveis 
+#Visualizar a MCA realizado das variáveis qualitativas
 fviz_mca_biplot(resultado_mca, repel = TRUE, ggtheme = theme_minimal())
 
 #A MCA simplifica a análise de dados categóricos, revelando as relações entre categorias e observações.
