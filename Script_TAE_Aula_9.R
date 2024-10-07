@@ -1,3 +1,5 @@
+##ANÁLISE DA REGRESSÃO LINEAR
+
 #correlação das variáveis distancia e idade
 corr_simples <- cor(distancia$distancia, distancia$idade)
 corr_simples
