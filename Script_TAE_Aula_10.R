@@ -1,4 +1,6 @@
-# a função glm() ajusta o modelo de regressão logistica
+##ANÁLISE DE REGRESSÃO LOGÍSTICA
+
+#a função glm() ajusta o modelo de regressão logistica
 modelo_simples <- glm(resposta ~ difinib, data = inibina_1, family = binomial(link = "logit" ))
 
 # A função summary() apresenta um resumo estatístico do modelo
