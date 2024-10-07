@@ -1,3 +1,5 @@
+## REGULARIZAÇÃO - APRENDIZADO SUPERVISIONADO
+
 # a função lm() ajusta o modelo de regressão linear multivariaveis
 # com a summary() para obter os estimadores de mínimos quadrados
 pulmao_lm <- lm(logrc ~ idade + tmunic + htransp + cargatabag + ses + densid + distmin, data = antracose2)
