@@ -1,3 +1,5 @@
+##MODELOS ADITIVOS GENERALIZADOS
+
 # instalação dos pacotes para modelos aditivos generalizados
 install.packages("mgcv")
 library(mgcv)
