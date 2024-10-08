@@ -1,20 +1,23 @@
-## REGULARIZAÇÃO - APRENDIZADO SUPERVISIONADO
+# REGULARIZAÇÃO - APRENDIZADO SUPERVISIONADO
+
+##Pacotes que serão utilizados:
+install.packages("glmnet")
+library(glmnet)
+
 
 # a função lm() ajusta o modelo de regressão linear multivariaveis
 # com a summary() para obter os estimadores de mínimos quadrados
-pulmao_lm <- lm(logrc ~ idade + tmunic + htransp + cargatabag + ses + densid + distmin, data = antracose2)
+pulmao_lm <- lm(antracose ~ idade + tmunic + htransp + cargatabag + ses + densid + distmin, data = antracose2)
 summary(pulmao_lm)
 
-#Instalação do pacote glmnet
-install.packages("glmnet")
-library(glmnet)
 
 #Para extrair as variáveis explicativas e a variável resposta
 #X recebe uma matriz das 7 variáveis explicativas data.matrix()
 #y recebe variável resposta
-y <- antracose2$logrc
-X <- antracose2[ , -c(5,9)]
+y <- antracose2$antracose
+X <- antracose2[ , -c(5)]
 X <- data.matrix(X)
+
 
 # Para ajustar o modelo Ridge
 # o argumento  alpha = 0 na função cv.glmnet()  indica que estamos fazendo o modelo Ridge
