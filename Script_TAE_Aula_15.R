@@ -3,13 +3,13 @@ install.packages("MASS")
 library(MASS)
 
 #o coeficiente da função discriminante por meio da função lda() do pacote MASS.
-coef_disc <- lda(inibina$resposta ~ inibina$difinib, data= inibina)
+coef_disc <- lda(inibina_1$resposta ~ inibina_1$difinib, data= inibina_1)
 print(coef_disc)
 
 #tabela relacionando a classificação predita com os valores reais da variável resposta
 # é obtida por meio da função predict()
 predito <- predict(coef_disc)
-table(predito$class, inibina$resposta)
+table(predito$class, inibina_1$resposta)
 
 # a função glm() ajusta o modelo de regressão logistica
 regressao <- glm(resposta ~ difinib, data = inibina_1, family = binomial(link = "logit" ))
