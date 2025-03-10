@@ -1,5 +1,5 @@
-# função para ler e dar as informações do arquivo .csv 
-ceagfgv <- read_csv("~/Desktop/TAE/ceagfgv.csv")
+# ANÁLISE DESCRITIVA: VARIÁVEIS QUALITATIVAS E QUANTITATIVAS
+
 
 # construir e apresentar as tabelas das variáveis qualitativas (chr) 
 tabela_ingles <- table(ceagfgv$ingles)
