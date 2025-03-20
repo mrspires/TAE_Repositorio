@@ -2,6 +2,9 @@
 #E OS MODELOS PROBABILÍSTICOS 
 
 #Carregar os pacotes necessários
+install.packages("ggplot2")
+install.packages("e1071")
+library(e1071)
 library(ggplot2)
 
 #Medidas de variabilidade e posição
@@ -24,21 +27,21 @@ curve(dnorm(x, mean(ceagfgv$salario), sd(ceagfgv$salario)),
 
 # Plotando o histograma e a curva de densidade usando ggplot2
 ggplot(data.frame(ceagfgv$salario), aes(x = ceagfgv$salario)) +
-  geom_histogram(aes(y = ..density..), bins = 15, fill = "blue", alpha = 0.6) +
+  geom_histogram(aes(y = ..density..), bins = 50, fill = "blue", alpha = 0.6) +
   geom_density(color = "pink", size = 1.5) +
   labs(title = "Histograma e Curva de Densidade dos Salários",
        x = "Salário",
        y = "Densidade") +
   theme_minimal()
 
-#Funções para a Distribuição Normal X ~ N(0, 1)
+#Operações para a Distribuição Normal X ~ N(0, 1)
 #d calcula a densidade de probabilidade f(x) no ponto x
 #dnorm => densidade no ponto x = -1 
-dnorm(-1)
+dnorm(1)
 
 #p calcula a função de probabilidade acumulada F(x) no ponto x
 #pnorm => P(X < -1)
-pnorm(-1)
+pnorm(1)
 
 #q calcula o quantil correspondente a uma dada probabilidade
 #qnorm => P( X < a) = 0,975  logo a = 1,959964
@@ -50,4 +53,8 @@ amostra <- rnorm(100)
 
 #Plotar a distribuição Normal 
 plot(dnorm, from = -4, to =4, col = "darkred", main = "Distribuição Normal,  X ~ N(0, 1)", 
+     xlab ="Valores de x", ylab = "Densidade de probabilidade")
+
+#Plotar a distribuição Exponencial 
+plot(dexp, from = 0, to =4, col = "darkblue", main = "Distribuição Exponencial", 
      xlab ="Valores de x", ylab = "Densidade de probabilidade")
