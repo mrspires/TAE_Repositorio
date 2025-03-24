@@ -1,3 +1,9 @@
+#ANÁLISE DE DADOS DE DUAS VARIÁVEIS
+
+# Instalação do pacote DescTools
+install.packages("DescTools")
+library(DescTools)
+
 # Contruir a tabela de dupla entrada ou tabela de contingência com frequencia absoluta com os rótulos
 tabela_contingencia <- with(milsa, table(Est.civil, Inst))
 print(tabela_contingencia)
@@ -34,10 +40,6 @@ C <- sqrt(X2 / (X2 + n))
 # Mostrar o valor do coeficiente de contingência
 C
 
-
-# Instalação do pacote DescTools
-install.packages("DescTools")
-library(DescTools)
 
 # Cálculo do coeficiente de contingência para duas ou mais variáveis qualitativas
 coef_contingencia <- ContCoef(tabela_contingencia)
