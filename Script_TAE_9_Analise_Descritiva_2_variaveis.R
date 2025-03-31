@@ -1,4 +1,5 @@
-#ANÁLISE DE DADOS DE DUAS VARIÁVEIS
+#ANÁLISE DE DADOS DE DUAS VARIÁVEIS:
+#FUNÇÕES PARA DUAS VARIÁVEIS QUALITATIVAS
 
 # Instalação do pacote DescTools
 install.packages("DescTools")
@@ -24,7 +25,7 @@ prop.table(tabela_contingencia, margin = 2)
 #main, sub, xlab, ylab:Define títulos para o gráfico principal, subtítulo, rótulo do eixo x e rótulo do eixo y, respectivamente.
 par(mfrow = c(1, 1))
 barplot(tabela_contingencia, main = "Estado Civil", xlab = "Nível de Instrução", ylab = "Frequência", beside = TRUE, legend = TRUE)
-barplot(t(tabela_contingencia),main = "Nível de Instrução", xlab = "Estado Civil", ylab = "Frequência", beside = TRUE, legend = TRUE)
+barplot(t(tabela_contingencia), col= c("#009999", "#0000FF", "#E1E1E1"), main = "Nível de Instrução", xlab = "Estado Civil", ylab = "Frequência", beside = TRUE, legend = TRUE)
 
 # Calcular o coeficiente de contingência a partir da fórmula executando o teste Qui-quadrado
 tabela <- table(milsa$Est.civil, milsa$Inst)
