@@ -1,3 +1,20 @@
+#ANÁLISE DE DADOS DE MULTIVARIÁVEIS
+
+# Instalar os pacotes para visualização da matriz de correlação
+install.packages("ggplot2")
+library(ggplot2)
+install.packages("corrplot")
+library(corrplot)
+install.packages("ggcorrplot")
+library(ggcorrplot)
+
+# Instalar pacotes para calcular a medida de associação entre variáveis qualitativas
+install.packages("FactoMineR")
+library(FactoMineR)
+
+install.packages("factoextra")
+library(factoextra)
+
 # Tabela para as duas variveis de qualidade e uma de quantidade
 tabela <- with(milsa, ftable(Regiao, Est.civil, Inst))
 prop.table(tabela)
@@ -10,23 +27,12 @@ print(resumo_salario)
 # Gráfico a ser apresentado é o Boxplot pois queremos comparar as estatísticas da variável Salario nas categorias da variável Inst
 boxplot(Salario ~ Inst * Est.civil, data=milsa, main = "Salarios", xlab = "Nível de Instrução x Estado Civil")
 
-
 #Para calcular a média de uma variável que contém dados faltantes (ou ocultos como NA) em R,é necessário ignorar esses valores NA durante o cálculo. 
 #Isso pode ser feito utilizando o parâmetro na.rm = TRUE na função mean().
 valor_substituto <- mean(milsa$Filhos, na.rm = TRUE)
 
 #A função replace() é uma maneira simples de substituir valores NA na variável 
 milsa$Filhos <- replace(milsa$Filhos, is.na(milsa$Filhos), valor_substituto)
-
-# Instalar os pacotes para visualização da matriz de correlação
-install.packages("ggplot2")
-library(ggplot2)
-
-install.packages("corrplot")
-library(corrplot)
-
-install.packages("ggcorrplot")
-library(ggcorrplot)
 
 # Visualizar a matriz de correlação de três ou mais variáveis quantitativas
 matriz_correlacao <- data.frame(milsa$Salario, milsa$Anos, milsa$Filhos)
@@ -38,14 +44,6 @@ corrplot(matriz, method = "circle")
 
 # Visualizar a matriz de correlação com ggcorrplot
 ggcorrplot(matriz, lab = TRUE)
-
-
-# Instalar pacotes para calcular a medida de associação entre variáveis qualitativas
-install.packages("FactoMineR")
-library(FactoMineR)
-
-install.packages("factoextra")
-library(factoextra)
 
 #Para realizar a MCA é necessário construir um data.frame com as varáveis qualitativas que serão estudadas 
 mca_variaveis <- data.frame(milsa$Regiao, milsa$Est.civil , milsa$Inst)
