@@ -18,14 +18,19 @@ prop.table(tabela_contingencia)
 prop.table(tabela_contingencia, margin = 1)
 prop.table(tabela_contingencia, margin = 2)
 
-# Construção dos gráficos 
+# Construção dos gráficos   
+# Retorna 5 cores do gradiente para usar na função barplot()
+azul_grad <- colorRampPalette(c("#cce5ff", "#004085"))
+azul_grad(5)  
+
 # A função par() aceita uma série de argumentos que controlam diferentes aspectos dos gráficos, tais como layout, margens, aparência dos eixos, cores, entre outros
 #o argumento mfrow é um vetor de dois valores que especifica o número de linhas e colunas de gráficos que você deseja em uma única janela gráfica.
 #mfcol é semelhante ao mfrow, mas os gráficos são preenchidos em colunas, em vez de linhas.
 #main, sub, xlab, ylab:Define títulos para o gráfico principal, subtítulo, rótulo do eixo x e rótulo do eixo y, respectivamente.
 par(mfrow = c(1, 1))
 barplot(tabela_contingencia, main = "Estado Civil", xlab = "Nível de Instrução", ylab = "Frequência", beside = TRUE, legend = TRUE)
-barplot(t(tabela_contingencia), col= c("#009999", "#0000FF", "#E1E1E1"), main = "Nível de Instrução", xlab = "Estado Civil", ylab = "Frequência", beside = TRUE, legend = TRUE)
+barplot(t(tabela_contingencia), col= c("#CCE5FF", "#99BBE0", "#6692C2"), main = "Nível de Instrução", xlab = "Estado Civil", ylab = "Frequência", beside = TRUE, legend = TRUE)
+
 
 # Calcular o coeficiente de contingência a partir da fórmula executando o teste Qui-quadrado
 tabela <- table(milsa$Est.civil, milsa$Inst)
