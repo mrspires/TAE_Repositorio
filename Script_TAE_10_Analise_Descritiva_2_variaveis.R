@@ -1,6 +1,11 @@
 #ANÁLISE DESCRITIVA DE DUAS VARIÁVEIS 
 #FUNÇÕES PARA O ESTUDO DE DUAS VARIÁVEIS: UMA QUALITATIVA E OUTRA QUANTITATIVA 
 
+#Pacotes que serão usados
+install.package("dplyr")
+library(dplyr)
+
+
 #Quartis da variável Salario no arquivo milsa.csv
 with(milsa, quantile(Salario))
 
@@ -44,6 +49,27 @@ tabela_sal_anos <- with(milsa, table(salario_cut, anos_cut))
 tabela_sal_anos
 tabela_sal_anos2 <- prop.table(tabela_sal_anos)
 addmargins(tabela_sal_anos2)
+
+# Seleciona apenas as variáveis quantitativas (numéricas)
+milsa_quantitativas <- missa[sapply(missa, is.numeric)]
+
+# Visualiza o novo data.frame
+head(missa_quantitativas)
+
+tabela_estatisticas <- milsa %>%
+  group_by(Inst) %>%
+  summarise(
+    Min = min(Salario, na.rm = TRUE),
+    Q1 = quantile(Salario, 0.25, na.rm = TRUE),
+    Mediana = median(Salario, na.rm = TRUE),
+    Média = mean(Salario, na.rm = TRUE),
+    Q3 = quantile(Salario, 0.75, na.rm = TRUE),
+    Máximo = max(Salario, na.rm = TRUE),
+    Desvio_Padrão = sd(Salario, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+print(tabela_estatisticas)
 
 # Gráfico a ser apresentado é o de dispersão pois queremos comparar as quantidades das duas variáveis Anos vs Salario
 with(milsa, plot(x = Anos, y = Salario, main= "Gráfico de Dispersao"))
