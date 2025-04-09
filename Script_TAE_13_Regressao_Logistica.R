@@ -1,11 +1,21 @@
 ##ANÁLISE DE REGRESSÃO LOGÍSTICA
 
+# Instalar e carregar pacote
+install.packages("dplyr")
+library(dplyr)
 
-# Converter vírgula para ponto e transformar em numérico
-inibina_1$difinib <- as.numeric(gsub(",", ".", inibina_1$difinib))
+
+# Criar nova coluna com a diferença entre duas colunas
+inibina <- inibina %>%
+  mutate(difinib = inibpos - inibpre)
+
+#Transformar os valores "positiva" em 1 e "negativa" em 0 dentro da coluna resposta_binaria
+inibina <- inibina %>%
+  mutate(resposta_binaria = ifelse(resposta == "positiva", 1,
+                            ifelse(resposta == "negativa", 0, NA)))
 
 #a função glm() ajusta o modelo de regressão logistica
-modelo_simples <- glm(resposta ~ difinib, data = inibina_1, family = binomial(link = "logit" ))
+modelo_simples <- glm(resposta_binaria ~ difinib, data = inibina, family = binomial(link = "logit" ))
 
 # A função summary() apresenta um resumo estatístico do modelo
 resumo <- summary(modelo_simples)
@@ -18,4 +28,4 @@ preditoR <- predict(modelo_simples, type = "response")
 Resposta <- ifelse(preditoR > 0.5, 1, 0)
 
 # Gera a matriz de confusão
-table(Resposta, inibina_1$resposta)
+table(Resposta, inibina$resposta_binaria)
