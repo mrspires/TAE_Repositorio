@@ -1,4 +1,4 @@
-# REGULARIZAÇÃO - APRENDIZADO SUPERVISIONADO
+#APRENDIZADO SUPERVISIONADO - REGULARIZAÇÃO
 
 ##Pacotes que serão utilizados:
 install.packages("glmnet")
