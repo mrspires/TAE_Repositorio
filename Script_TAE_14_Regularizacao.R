@@ -22,6 +22,7 @@ X <- data.matrix(X)
 # Para ajustar o modelo Ridge
 # o argumento  alpha = 0 na função cv.glmnet()  indica que estamos fazendo o modelo Ridge
 modelo_Ridge = cv.glmnet(X, y, alpha = 0)
+modelo_Ridge
 
 #gerando o gráfico dessa regularização
 plot(modelo_Ridge)
