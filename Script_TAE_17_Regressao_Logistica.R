@@ -24,4 +24,4 @@ modelo2 <- train(deslocamento ~ distanciaF, data= disco, method= "glm", family= 
 print(modelo2)
 
 modelo3 <- train(deslocamento ~ distanciaA + distanciaF, data= disco, method= "glm", family= binomial, trControl=train_control)
-print(modelo3)
+summary(modelo3)
