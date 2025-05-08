@@ -1,3 +1,5 @@
+# CLASSIFICAÇÃO PELA ANÁLISE DISCRIMINANTE LINEAR
+
 #Instalação do pacote MASS
 install.packages("MASS")
 library(MASS)
