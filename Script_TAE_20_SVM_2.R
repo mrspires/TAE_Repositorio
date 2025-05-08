@@ -1,4 +1,4 @@
-
+##ALGORITMOS SUPORTE VETORIAL##
 ##CLASSIFICADOR DE MARGEM NÃO LINEAR##
 
 #Instalação do pacote para utilizar as funções svm(), tune()
